@@ -3,7 +3,6 @@ Welcome to the Malone Lab training on EC data processing.
 
 ## Course Outline:
 
-<<<<<<< HEAD
 + <a href="https://docs.google.com/presentation/d/1nduKbh0dpxQdfMj7-wOyK0zsN-l3RLpu/edit?usp=drive_link&ouid=100630405528702830421&rtpof=true&sd=true" > Week 1: Introduction to Eddy-Covariance > Malone Lab </a>
 
 + Week 2: Meteorological data processing
