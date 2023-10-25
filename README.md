@@ -9,4 +9,8 @@ Welcome to the Malone Lab training on EC data processing.
 - Week 5: AmeriFlux data formats
 - Week 6: Creating and updating protocols
 - Week 7: Get acquainted with your site
-- Week 8: Data Processing Workflows
++ Week 3: EddyPro
++ Week 4: Flux data QC filtering
++ Week 5: AmeriFlux data formats
++ Week 6: Creating and updating protocols
++ Week 7: Get acquainted with your site
