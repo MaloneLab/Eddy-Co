@@ -1,5 +1,5 @@
 # Eddy-Co
-Welcome to the Malone Lab training on EC data processing.
+Welcome to the Malone Lab training on eddycovariance data processing. The pourpose of this training is to provide a foundation for data processing from a tower site. While each site is different (files produced, format, and variables measured), data processing and formating is common across all sites. 
 
 ## Course Outline:
 
