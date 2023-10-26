@@ -108,6 +108,9 @@ ggplot(data = srs6) + geom_point( aes( x=TS, y = Tair7_Avg))
 ggplot(data = srs6) + geom_point( aes( x=TS, y = Tair8_Avg))
 
 # Format for AmeriFlux:  https://ameriflux.lbl.gov/data/aboutdata/data-variables/
+# https://docs.google.com/document/d/1psFQZUl67hOF-xVbWkDBJRPh2HhwNTJfMcRSkk2C43k/edit?usp=sharing
+
+
 
 
 srs6$TIMESTAMP <- format( srs6$TS, "%Y%m%d%H%M%S") #
