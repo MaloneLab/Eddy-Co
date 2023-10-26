@@ -5,7 +5,7 @@ Welcome to the Malone Lab training on eddycovariance data processing. The pourpo
 
 + <a href="https://docs.google.com/presentation/d/1nduKbh0dpxQdfMj7-wOyK0zsN-l3RLpu/edit?usp=drive_link&ouid=100630405528702830421&rtpof=true&sd=true" > Week 1: Introduction to Eddy-Covariance > Malone Lab </a>
 
-+ Week 2: Meteorological data processing
++ <a href="https://docs.google.com/presentation/d/1nduKbh0dpxQdfMj7-wOyK0zsN-l3RLpu/edit?usp=drive_link&ouid=100630405528702830421&rtpof=true&sd=true" > Week 2: Meteorological data processing </a>
 + Week 3: EddyPro
 + Week 4: Flux data QC filtering
 + Week 5: AmeriFlux data formats
