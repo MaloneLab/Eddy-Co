@@ -3,6 +3,8 @@
 rm(list=ls()) #clears your environment:
 
 # Download data and add to your Eddy-Co Folder: 
+# https://drive.google.com/file/d/1z76t6OXR9ca6D6e1GKY35SyCEApHyXCX/view?usp=drive_link
+
 
 # Import the data:
 load(file= "Week2_EC_Training.RDATA")
