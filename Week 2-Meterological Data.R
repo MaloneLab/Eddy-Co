@@ -1,5 +1,10 @@
 # Welcome to week 2: 
 
+library(gtools)
+library(xts)
+library(dplyr)
+library(ggplot2)
+
 rm(list=ls()) #clears your environment:
 
 # Download data and add to your Eddy-Co Folder: 
@@ -67,7 +72,7 @@ ggplot(data = srs6.met) + geom_point( aes( x=TIMESTAMP, y = PAR_Den1_Avg))
 ggplot(data=srs6.met[which(srs6.met$TIMESTAMP < as.POSIXct("2018-03-20 13:30:00 EST", tz="EST", 
                                                            format="%Y-%m-%d %H:%M:%S") ),] ) + geom_point(aes(x=TIMESTAMP, y=Tair8_Avg ))
 
-srs6.met$Tair8_Avg[srs6.met$TIMESTAMP < as.POSIXct("2018-03-20 12:30:00 EST", tz="EST", 
+srs6.met$Tair8_Avg[srs6.met$TIMESTAMP <= as.POSIXct("2018-03-20 12:30:00 EST", tz="EST", 
                                                    format="%Y-%m-%d %H:%M:%S")] <- NA
 
 ggplot(data=srs6.met) + geom_point(aes(x=TIMESTAMP, y=Tair8_Avg ))
