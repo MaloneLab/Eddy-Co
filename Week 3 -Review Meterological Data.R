@@ -1,5 +1,5 @@
 # Week 3 Check Met Files:
-
+load('-Nathalia-Week 2-Homework.R')
 srs6.AF <- read.csv('Ameriflux_week2_KEY.csv')
 
 library(dplyr)

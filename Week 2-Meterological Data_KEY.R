@@ -1,4 +1,4 @@
-# Welcome to week 2: 
+#Week 2 Ket
 
 library(gtools)
 library(xts)
@@ -19,7 +19,7 @@ load(file= "Week2_EC_Training.RDATA")
 summary(srs6.met)
 
 # Atmospheric Data:
-ggplot(data = srs6.met) + geom_point( aes( x=TIMESTAMP, y = RH1_Avg))
+ggplot(data = srs6.met ) + geom_point( aes( x=TIMESTAMP, y = RH1_Avg))
 ggplot(data = srs6.met) + geom_point( aes( x=TIMESTAMP, y = RH2_Avg))
 ggplot(data = srs6.met) + geom_point( aes( x=TIMESTAMP, y = BP_mbar_Avg))
 ggplot(data = srs6.met) + geom_point( aes( x=TIMESTAMP, y = Tair1_Avg))
@@ -65,27 +65,38 @@ ggplot(data = srs6.met) + geom_point( aes( x=TIMESTAMP, y = PAR_Den1_Avg))
 
 ##### NOTES (List of columns with issues to fix)#####
 
-## Values out of range
-
-## EXAMPLE fixing sensor failure or drift:
-
-ggplot(data=srs6.met[which(srs6.met$TIMESTAMP < as.POSIXct("2018-03-20 13:30:00 EST", tz="EST", 
-                                                           format="%Y-%m-%d %H:%M:%S") ),] ) + geom_point(aes(x=TIMESTAMP, y=Tair8_Avg ))
-
-srs6.met$Tair8_Avg[srs6.met$TIMESTAMP <= as.POSIXct("2018-03-20 12:30:00 EST", tz="EST", 
-                                                   format="%Y-%m-%d %H:%M:%S")] <- NA
-
-ggplot(data=srs6.met) + geom_point(aes(x=TIMESTAMP, y=Tair8_Avg ))
-
-# EXAMPLE fixing issues with values out of range:
-
-ggplot(data=srs6.met) + geom_point(aes(x=TIMESTAMP, y=LUpCo_Avg ))
-
-srs6.met$LUpCo_Avg[ srs6.met$LUpCo_Avg > 1000] <- NA
-
 # Filter all ISSUES in the data:
+sd <-as.POSIXct("2018-03-15 00:00:00 EST", tz="EST", format="%Y-%m-%d %H:%M:%S")
+ed <-as.POSIXct("2018-03-21 00:00:00 EST", tz="EST", format="%Y-%m-%d %H:%M:%S")
 
+srs6.met$RH1_Avg[srs6.met$TIMESTAMP >= sd & srs6.met$TIMESTAMP <= ed ] <- NA
+srs6.met$RH2_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$BP_mbar_Avg[srs6.met$TIMESTAMP >= sd & srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$Tair1_Avg[srs6.met$TIMESTAMP >= sd & srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$Tair2_Avg[srs6.met$TIMESTAMP >= sd & srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$Tair3_Avg[srs6.met$TIMESTAMP >= sd & srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$Tair4_Avg[srs6.met$TIMESTAMP >= sd & srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$Tair5_Avg[srs6.met$TIMESTAMP >= sd & srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$Tair6_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$Tair7_Avg[srs6.met$TIMESTAMP >= sd & srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$Tair8_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$ST1_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$ST2_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$ST3_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$ST4_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$ST5_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$ST6_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$ST7_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$ST8_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$SH1_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$SH2_Avg[srs6.met$TIMESTAMP <= ed] <- NA
 
+srs6.met$SDn_Avg[ srs6.met$SDn_Avg < -100] <- NA
+srs6.met$LUp_Avg[ srs6.met$LUp_Avg >= 0] <- NA
+srs6.met$LDn_Avg[ srs6.met$LDn_Avg >= 10] <- NA
+srs6.met$RlNet_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$LUpCo_Avg[srs6.met$TIMESTAMP <= ed] <- NA
+srs6.met$LDnCo_Avg[srs6.met$TIMESTAMP <= ed] <- NA
 
 
 
@@ -115,43 +126,73 @@ ggplot(data = srs6) + geom_point( aes( x=TS, y = Tair8_Avg))
 # Format for AmeriFlux:  https://ameriflux.lbl.gov/data/aboutdata/data-variables/
 # https://docs.google.com/document/d/1psFQZUl67hOF-xVbWkDBJRPh2HhwNTJfMcRSkk2C43k/edit?usp=sharing
 
-
-
-
 srs6$TIMESTAMP <- format( srs6$TS, "%Y%m%d%H%M%S") #
 srs6$PA <- srs6$BP_mbar_Avg*0.1
-srs6$Tair1_Avg 
 
-
-srs6$Rain_1_Tot
+# Soil heatflux in mV
+srs6$G_1_8_1 = srs6$SH1_Avg*0.001
+srs6$G_2_8_1 = srs6$SH2_Avg*0.001
 
 # You need to finish this:
-AF.names <- c(RH1_Avg = 'RH_1_1_1', RH2_Avg = 'RH_1_8_1',
-              Tair1_Avg ='TA_1_8_1',
-              Tair2_Avg ='TA_1_7_1',
-              Tair3_Avg ='TA_1_6_1',
-              Tair4_Avg ='TA_1_5_1',
-              Tair5_Avg ='TA_1_4_1',
-              Tair6_Avg ='TA_1_3_1',
-              Tair7_Avg ='TA_1_2_1',
-              Tair8_Avg ='TA_1_1_1',
+AF.names <- c('PA_1_1_1' = 'PA',#Atmosphere
+              'RH_1_1_1' ='RH1_Avg', 
+              'RH_1_8_1' ='RH2_Avg',
+              'TA_1_8_1'='Tair1_Avg',
+              'TA_1_7_1'='Tair2_Avg',
+              'TA_1_6_1'= 'Tair3_Avg',
+              'TA_1_5_1'='Tair4_Avg',
+              'TA_1_4_1' ='Tair5_Avg',
+              'TA_1_3_1'='Tair6_Avg',
+              'TA_1_2_1' = 'Tair7_Avg',
+              'TA_1_1_1'= 'Tair8_Avg',
               
-              Rain_1_Tot = 'P_RAIN_1_8_1',
-              Rain_2_Tot = 'P_RAIN_1_1_1',
+              # Precipitation
+              'P_RAIN_1_8_1'= 'Rain_1_Tot',
+              'P_RAIN_1_1_1' = 'Rain_2_Tot',
               
+              # Soil Heat flux
+              'G_1_8_1'='G_1_8_1',
+              "G_1_8_1" = 'G_1_8_1',
               
-              )
+              # Soil Temperature
+              'TS_1_8_1'= 'ST1_Avg',
+              'TS_2_8_1' = 'ST2_Avg',
+              'TS_3_8_1'= 'ST3_Avg',
+              'TS_4_8_1'='ST4_Avg',
+              'TS_5_8_1'= 'ST5_Avg',
+              'TS_6_8_1'='ST6_Avg',
+              'TS_7_8_1'='ST7_Avg',
+              'TS_8_8_1'= 'ST8_Avg',
+              
+              # Radiation
+              'SW_OUT_1_1_1' = 'SUp_Avg',
+              'SW_IN_1_1_1'='SDn_Avg',
+              #'LW_OUT_1_1_1' = 'LUp_Avg',
+              #'LW_IN_1_1_1'='LDn_Avg',
+              'LW_OUT_1_1_1' = 'LUpCo_Avg',
+              'LW_IN_1_1_1'='LDnCo_Avg',
+              'ALB_1_1_1'= 'Albedo_Avg',
+              'NETRAD_1_1_1' = 'Rnet_Avg',
+              'PPFD_IN_1_1_1'= 'PAR_Den1_Avg')
 
-rename(srs6, all_of(AF.names)) # rename columns that are in the correct units
+srs6.af <- rename(srs6, all_of(AF.names)) # rename columns that are in the correct units
 
-
+names(srs6.af)
 #Subset all variable that go to AmeriFlux. Add all vars needed here
 
-srs6.AF <- srs6[c('TIMESTAMP', 'PA' )]
+AF.cols <- c('TIMESTAMP', 'PA_1_1_1','RH_1_1_1', 'RH_8_1_1',
+              'TA_8_1_1','TA_7_1_1', 'TA_6_1_1','TA_5_1_1',
+              'TA_4_1_1','TA_3_1_1','TA_2_1_1','TA_1_1_1',
+              'P_RAIN_8_1_1','P_RAIN_1_1_1',
+              'G_8_1_1', "G_8_2_1",  
+              'TS_8_1_1', 'TS_8_2_1','TS_8_3_1',
+              'TS_8_4_1','TS_8_5_1','TS_8_6_1',
+              'TS_8_7_1','TS_8_8_1',
+              'SW_OUT_1_1_1' ,'SW_IN_1_1_1',
+              'LW_OUT_1_1_1','LW_IN_1_1_1','ALB_1_1_1',
+              'NETRAD_1_1_1','PPFD_IN_1_1_1')
+
+srs6.AF <- srs6.af[,c(AF.cols )]
 
 # export the file
-
-write.csv( srs6.AF, 'Ameriflux_week2.csv')
-
-
-
+write.csv( srs6.AF, 'Ameriflux_week2_KEY.csv')
