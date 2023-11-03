@@ -126,17 +126,17 @@ srs6$Tair1_Avg
 srs6$Rain_1_Tot
 
 # You need to finish this:
-AF.names <- c(RH1_Avg = 'RH_1_1_1', RH2_Avg = 'RH_8_1_1',
-              Tair1_Avg ='TA_8_1_1',
-              Tair2_Avg ='TA_7_1_1',
-              Tair3_Avg ='TA_6_1_1',
-              Tair4_Avg ='TA_5_1_1',
-              Tair5_Avg ='TA_4_1_1',
-              Tair6_Avg ='TA_3_1_1',
-              Tair7_Avg ='TA_2_1_1',
+AF.names <- c(RH1_Avg = 'RH_1_1_1', RH2_Avg = 'RH_1_8_1',
+              Tair1_Avg ='TA_1_8_1',
+              Tair2_Avg ='TA_1_7_1',
+              Tair3_Avg ='TA_1_6_1',
+              Tair4_Avg ='TA_1_5_1',
+              Tair5_Avg ='TA_1_4_1',
+              Tair6_Avg ='TA_1_3_1',
+              Tair7_Avg ='TA_1_2_1',
               Tair8_Avg ='TA_1_1_1',
               
-              Rain_1_Tot = 'P_RAIN_8_1_1',
+              Rain_1_Tot = 'P_RAIN_1_8_1',
               Rain_2_Tot = 'P_RAIN_1_1_1',
               
               
