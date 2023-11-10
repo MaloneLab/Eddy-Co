@@ -37,16 +37,14 @@ srs6_raw$H <- srs6_raw$H +  srs6_raw  $H_strg
 
 # Filter by values out of bounds. These are site specific!
 ggplot(data=srs6_raw) + geom_point(aes(x=TIMESTAMP, y=NEE))
-srs6_raw$NEE[srs6_raw$NEE > 40] <- NA
-srs6_raw$NEE[srs6_raw$NEE < -45] <- NA
-
 ggplot(data=srs6_raw) + geom_point(aes(x=TIMESTAMP, y=H))
-srs6_raw $H[srs6_raw $H > 100] <- NA
-srs6_raw $H[srs6_raw $H < -100] <- NA
-
 ggplot(data=srs6_raw) + geom_point(aes(x=TIMESTAMP, y=LE))
-srs6_raw $LE[srs6_raw $LE > 100] <- NA
-srs6_raw $LE[srs6_raw $LE < -100] <- NA
+
+srs6_raw <- srs6_raw %>%
+  filter_out_of_bounds("NEE", -45, 40) %>%
+  filter_out_of_bounds("H", -100, 100) %>%
+  filter_out_of_bounds("LE", -100, 100)
+
 
 # Filter by Quality Flags: https://www.licor.com/env/support/EddyPro/topics/flux-quality-flags.html
 unique(srs6_raw$qc_Tau)
