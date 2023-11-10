@@ -46,6 +46,7 @@ testing/
 *.xml
 *.zip
 
+/myscripts
 /data
 Develop_Week2_MET_FILE.R
 Week2_EC_Training.RDATA
