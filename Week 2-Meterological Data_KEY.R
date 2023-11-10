@@ -152,7 +152,7 @@ AF.names <- c('PA_1_1_1' = 'PA',#Atmosphere
               
               # Soil Heat flux
               'G_1_8_1'='G_1_8_1',
-              "G_1_8_1" = 'G_1_8_1',
+              "G_2_8_1" = 'G_2_8_1',
               
               # Soil Temperature
               'TS_1_8_1'= 'ST1_Avg',
@@ -180,14 +180,14 @@ srs6.af <- rename(srs6, all_of(AF.names)) # rename columns that are in the corre
 names(srs6.af)
 #Subset all variable that go to AmeriFlux. Add all vars needed here
 
-AF.cols <- c('TIMESTAMP', 'PA_1_1_1','RH_1_1_1', 'RH_8_1_1',
-              'TA_8_1_1','TA_7_1_1', 'TA_6_1_1','TA_5_1_1',
-              'TA_4_1_1','TA_3_1_1','TA_2_1_1','TA_1_1_1',
-              'P_RAIN_8_1_1','P_RAIN_1_1_1',
-              'G_8_1_1', "G_8_2_1",  
-              'TS_8_1_1', 'TS_8_2_1','TS_8_3_1',
-              'TS_8_4_1','TS_8_5_1','TS_8_6_1',
-              'TS_8_7_1','TS_8_8_1',
+AF.cols <- c('TIMESTAMP', 'PA_1_1_1','RH_1_1_1', 'RH_1_8_1',
+              'TA_1_8_1','TA_1_7_1', 'TA_1_6_1','TA_1_5_1',
+              'TA_1_4_1','TA_1_3_1','TA_1_2_1','TA_1_2_1',
+              'P_RAIN_1_8_1','P_RAIN_1_1_1',
+              'G_1_8_1', "G_2_8_1",  
+              'TS_1_8_1', 'TS_2_8_1','TS_3_8_1',
+              'TS_4_8_1','TS_5_8_1','TS_6_8_1',
+              'TS_7_8_1','TS_8_8_1',
               'SW_OUT_1_1_1' ,'SW_IN_1_1_1',
               'LW_OUT_1_1_1','LW_IN_1_1_1','ALB_1_1_1',
               'NETRAD_1_1_1','PPFD_IN_1_1_1')
