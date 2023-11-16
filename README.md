@@ -9,8 +9,8 @@ Welcome to the Malone Lab training on eddycovariance data processing. The pourpo
 
 + <a href="https://docs.google.com/presentation/d/12QY-Lfpk2hCJcIma_nrDYEZ-ohE-k2DircugWqkW1rk/edit?usp=sharing" > Week 3: EddyPro </a>
 
-+ Week 4: Flux data QC filtering
-+ Week 5: AmeriFlux data formats
++ <a href="https://docs.google.com/presentation/d/1wgSvQfiIT88M9TAmJiB5eb5-auTLwGH-9ogOTjwJ61A/edit?usp=drive_link" > Week 4: Flux data QC filtering </a>
++ <a href="https://docs.google.com/presentation/d/1NejejmY4kG6hkb9VQ2PuzhP86mTKcqY5Gy6N8uMaV2Q/edit?usp=sharing"> Week 5: AmeriFlux data formats
 + Week 6: Creating and updating protocols
 + Week 7: Get acquainted with your site
 + Week 8: Data Processing Workflows
