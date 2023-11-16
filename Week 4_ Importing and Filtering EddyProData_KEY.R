@@ -21,7 +21,7 @@ class(flux_raw$Date)
 
 # Create a timestamp using the date and the time column:
 flux_raw <- flux_raw %>% mutate( TIMESTAMP = as.POSIXct(paste( Date, time, sep=" "), tz = "EST", format="%Y-%m-%d %H:%M"))
-
+flux_raw$TIMESTAMP
 # Create a full half hourly timestamp, format it:
 ts <- data.frame(TIMESTAMP =seq.POSIXt(as.POSIXct("2018-03-01 00:00:00 EST"), as.POSIXct("2018-04-05 23:30:00 EST"), units = "sec", by = 1800))
 ts$TIMESTAMP <- as.POSIXct(ts$TIMESTAMP , tz = "EST", format="%Y-%m-%d %H:%M:%S")
@@ -75,18 +75,34 @@ srs6_raw$NEE[srs6_raw $filter ==1] <- NA
 # Plot data:
 ggplot(data=srs6_raw) + geom_point( aes( x=TIMESTAMP, y=NEE))
 
-# Subset data: https://www.licor.com/env/support/EddyPro/topics/output-files-full-output.html#top
+# Subset data: https://www.licor.com/env/support/EddyPro/topics/output-files-full-output.html
+
 names(srs6_raw)
 
-af.flux.sub <- srs6_raw[,c('co2_mole_fraction', 'X.z.d..L', 'air_pressure', 'co2_mean', 
-            'h2o_mean', 'Tau', 'co2_mole_fraction', 'co2_flux', 'co2_strg', 
-            'h2o_mole_fraction', 'H', 'H_strg', 'LE', 'LE_strg')]
+af.flux.sub <- srs6_raw[,c('co2_mixing_ratio', 'X.z.d..L', 'air_pressure', 
+            'Tau', 'co2_flux', 'co2_strg', 
+            'h2o_mixing_ratio', 'H', 'H_strg', 'LE', 'LE_strg')]
 
 # Rename Columns: https://ameriflux.lbl.gov/data/aboutdata/data-variables/
 
+# Unit conversions:
 
+af.flux.sub$air_pressure_kpa = af.flux.sub$air_pressure*0.001
 
+# You need to finish this:
+AF.names.flux <- c(  'CO2_MIXING_RATIO_1_1_1'= 'co2_mixing_ratio', 
+                    "ZL_1_1_1" ='X.z.d..L', 
+                    "PA_1_1_1" = 'air_pressure_kpa',
+                    'TAU_1_1_1' = 'Tau',
+                    'FC_1_1_1' = 'co2_flux', 
+                    'SC_1_1_1' = 'co2_strg', 
+                    'H2O_MIXING_RATIO_1_1_1' ='h2o_mixing_ratio', 
+                    'H_1_1_1' = 'H', 
+                    'SH_1_1_1' = 'H_strg', 
+                    'LE_1_1_1' = 'LE', 
+                    'SLE_1_1_1' = 'LE_strg')
 
+srs6.af.flux <- rename(af.flux.sub, all_of(AF.names.flux)) # rename columns that are in the correct units
 
 # Export the flux file to the datafile: call the file: AF_Flux_SRS6_032018-042018.csv
 
