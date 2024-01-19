@@ -1,7 +1,7 @@
 # Eddy-Co
 Welcome to the Malone Lab training on eddy covariance data processing. The purpose of this training is to provide a foundation for data processing from a tower site. While each site is different (files produced, format, and variables measured), data processing and formatting is common across all sites. 
 
-## Semeater 1 Course Outline: Introduction to Processing Eddy Covariance Data
+## Semeater 1: Introduction to Processing Eddy Covariance Data
 
 + <a href="https://docs.google.com/presentation/d/1nduKbh0dpxQdfMj7-wOyK0zsN-l3RLpu/edit?usp=drive_link&ouid=100630405528702830421&rtpof=true&sd=true" > Week 1: Introduction to Eddy-Covariance > Malone Lab </a>
 
