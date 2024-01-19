@@ -17,7 +17,7 @@ Welcome to the Malone Lab training on eddy covariance data processing. The purpo
 
 + <a href="https://docs.google.com/presentation/d/1Sv7_Z2tBm2GaWA3BQBQH9o5i0NKW_edfWR7Ua67dlYs/edit?usp=sharing "  > Week 7: Data Processing Workflows </a>
 
-## Semester 2: Introduction to site Management
+## Semester 2: Introduction to Site Management
 
 ### Meeting  1: Github Repository Setup
 ### Meeting  2: Processing Update (Clean Up Code)
