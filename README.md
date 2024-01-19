@@ -1,7 +1,7 @@
 # Eddy-Co
-Welcome to the Malone Lab training on eddycovariance data processing. The pourpose of this training is to provide a foundation for data processing from a tower site. While each site is different (files produced, format, and variables measured), data processing and formating is common across all sites. 
+Welcome to the Malone Lab training on eddy covariance data processing. The purpose of this training is to provide a foundation for data processing from a tower site. While each site is different (files produced, format, and variables measured), data processing and formatting is common across all sites. 
 
-## Course Outline:
+## Semeater 1 Course Outline: Introduction to Processing Eddy Covariance Data
 
 + <a href="https://docs.google.com/presentation/d/1nduKbh0dpxQdfMj7-wOyK0zsN-l3RLpu/edit?usp=drive_link&ouid=100630405528702830421&rtpof=true&sd=true" > Week 1: Introduction to Eddy-Covariance > Malone Lab </a>
 
@@ -16,4 +16,14 @@ Welcome to the Malone Lab training on eddycovariance data processing. The pourpo
 + <a href="https://docs.google.com/presentation/d/1Dqie3izhCmUxUv-sRhd1fgH7urVwDAK6Yjg-cTrEPJA/edit?usp=sharing"> Week 6: Get acquainted with your site, Creating and updating protocols </a>
 
 + <a href="https://docs.google.com/presentation/d/1Sv7_Z2tBm2GaWA3BQBQH9o5i0NKW_edfWR7Ua67dlYs/edit?usp=sharing "  > Week 7: Data Processing Workflows </a>
+
+## Semester 2: Introduction to site Management
+
+### Meeting  1: Github Repository Setup
+### Meeting  2: Processing Update (Clean Up Code)
+### Meeting  3: Auto-report Generation (RMarkdown)
+### Meeting  4: Filtering evaluation
+### Meeting  5: Gap-filling evaluation
+### Meeting  6: Data reporting
+
 
