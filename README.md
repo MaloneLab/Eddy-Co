@@ -22,8 +22,8 @@ Welcome to the Malone Lab training on eddy covariance data processing. The purpo
 ### Meeting  1: Github Repository Setup
 ### Meeting  2: Processing Update (Clean Up Code)
 ### Meeting  3: Auto-report Generation (RMarkdown)
-### Meeting  4: Filtering evaluation
-### Meeting  5: Gap-filling evaluation
-### Meeting  6: Data reporting
+### Meeting  4: Filtering Evaluation
+### Meeting  5: Gap-filling Evaluation
+### Meeting  6: Data Reporting
 
 
