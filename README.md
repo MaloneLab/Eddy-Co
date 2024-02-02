@@ -20,6 +20,12 @@ Welcome to the Malone Lab training on eddy covariance data processing. The purpo
 ## Semester 2: Introduction to Site Management
 
 ### Meeting  1: Github Repository Setup
+1. Setup VPN Access: https://yale.service-now.com/it?id=support_article&sys_id=0a16c0a92b93e840fcb01abf59da15d6
+
+2. Connect to datasource
+
+3. Use Scripts to access the data.
+
 ### Meeting  2: Processing Update (Clean Up Code)
 ### Meeting  3: Auto-report Generation (RMarkdown)
 ### Meeting  4: Filtering Evaluation
